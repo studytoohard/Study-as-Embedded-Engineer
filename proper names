@@ -5,3 +5,7 @@ REGISTER：寄存器
 Arithmetic unit：运算器
 Memory：存储器
 control unit：控制器
+volatile：不稳定的 C++：修饰符 volatile 告诉编译器，变量的值可能以程序未明确指定的方式被改变。
+restrict：限制 C++：由 restrict 修饰的指针是唯一一种访问它所指向的对象的方式。只有 C99 增加了新的类型限定符 restrict。
+#声明是告诉编译器有这么个变量,但并不实现。定义就是实现这个变量,真正在内存(堆或栈中)为此变量分配空间
+extern：外来的 C++：extern 是用来在另一个文件中声明一个全局变量或函数。
