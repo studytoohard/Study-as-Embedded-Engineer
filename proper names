@@ -9,3 +9,6 @@ volatile：不稳定的 C++：修饰符 volatile 告诉编译器，变量的值�
 restrict：限制 C++：由 restrict 修饰的指针是唯一一种访问它所指向的对象的方式。只有 C99 增加了新的类型限定符 restrict。
 #声明是告诉编译器有这么个变量,但并不实现。定义就是实现这个变量,真正在内存(堆或栈中)为此变量分配空间
 extern：外来的 C++：extern 是用来在另一个文件中声明一个全局变量或函数。
+Condition ? X : Y 如果 Condition(条件)为真 ? 则值为 X : 否则值为 Y
+seed：种子
+srand()函数定义 ： void srand (unsigned int seed);
