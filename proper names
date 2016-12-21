@@ -12,3 +12,4 @@ extern：外来的 C++：extern 是用来在另一个文件中声明一个全局
 Condition ? X : Y 如果 Condition(条件)为真 ? 则值为 X : 否则值为 Y
 seed：种子
 srand()函数定义 ： void srand (unsigned int seed);
+Derived：继承，派生类
