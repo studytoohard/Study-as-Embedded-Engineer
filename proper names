@@ -18,10 +18,5 @@ sharing：共享
 Asynchronism：异步性
 synchronization：同步
 virtual：虚拟
-
-
-
-
-
-
-
+Polymorphism：多态性
+RTTI（Run-Time Type Identification）：运行时类型识别
