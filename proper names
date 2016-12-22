@@ -13,3 +13,15 @@ Condition ? X : Y 如果 Condition(条件)为真 ? 则值为 X : 否则值为 Y
 seed：种子
 srand()函数定义 ： void srand (unsigned int seed);
 Derived：继承，派生类
+Concurrence：并发
+sharing：共享
+Asynchronism：异步性
+synchronization：同步
+virtual：虚拟
+
+
+
+
+
+
+
