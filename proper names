@@ -20,3 +20,4 @@ synchronization：同步
 virtual：虚拟
 Polymorphism：多态性
 RTTI（Run-Time Type Identification）：运行时类型识别
+primitive：原语 由若干条指令构成的原子操作，要么全做要么全不做。
