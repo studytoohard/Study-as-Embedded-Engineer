@@ -29,7 +29,7 @@ condition：条件
 Proberen：尝试
 Verhogen：增加
 pipe communication：管道通信
-
-
-
-
+suspend：挂起（原语）
+active：激活（原语）
+block：阻塞（原语）
+wakeup：唤醒（原语）
