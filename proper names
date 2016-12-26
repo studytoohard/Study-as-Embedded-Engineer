@@ -33,3 +33,8 @@ suspend：挂起（原语）
 active：激活（原语）
 block：阻塞（原语）
 wakeup：唤醒（原语）
+critical section：临界区
+semaphores：信号量
+mutex：互斥
+simultaneous：同时
+
