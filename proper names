@@ -2,7 +2,7 @@ LSI：Large-scale integrated circuit 大规模集成电路
 CPU：Central Processing Unit 中央处理器
 CPI：Clockcycle Per Instruction 每条指令执行周期数
 REGISTER：寄存器
-Arithmetic unit：运算器
+Arithmetic unit：运算器：计算机中执行各种算术和逻辑运算操作的部件。
 Memory：存储器
 control unit：控制器
 volatile：不稳定的 C++：修饰符 volatile 告诉编译器，变量的值可能以程序未明确指定的方式被改变。
@@ -37,4 +37,5 @@ critical section：临界区
 semaphores：信号量
 mutex：互斥
 simultaneous：同时
-
+Machine word：机器字长：指计算机进行一次整数运算所能处理的二进制数据的位数
+ALU:Arithmetic Logic Unit：算数逻辑单元
