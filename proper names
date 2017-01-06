@@ -39,3 +39,13 @@ mutex：互斥
 simultaneous：同时
 Machine word：机器字长：指计算机进行一次整数运算所能处理的二进制数据的位数
 ALU:Arithmetic Logic Unit：算数逻辑单元
+EBP：extended base pointer：扩展基址指针寄存器其内存放一个指针：该指针指向系统栈最上面一个栈帧的底部。
+ESP：extended Stack pointer：堆栈指针寄存器，主要用于存放堆栈内存储单元的偏移量，用它可实现多种存储器操作数的寻址方式，为以不同的地址形式
+访问存储单元提供方便。
+EBX：是"基地址"(base)寄存器, 在内存寻址时存放基地址。
+ESI/EDI分别叫做"源/目标索引寄存器"(source/destination index),因为在很多字符串操作指令中, DS:ESI指向源串,而ES:EDI指向目标串.
+rep指令：repeat的目的是重复其上面的指令. ECX的值是重复的次数.
+STOS指令：Store String的作用是将eax中的值拷贝到ES:EDI指向的地址
+0xCCCCCCCC：代表着未被初始化.
+dword：双字，就是四个字节
+ptr：pointer缩写，即指针
