@@ -63,3 +63,8 @@ BLT：Branch if Less Than 小于跳转
 BGT：Branch if Greater than 大于跳转
 BGE：Branch if Greater than or Equa 大于或等于跳转
 CPSR：current program status register 程序状态寄存器
+SPSR：Saved Program Status register 程序状态保存寄存器 SPSR用于保存CPSR的状态，以便异常返回后恢复异常发生时的工作状态。 
+ARM-R14 LR：连接寄存器，记作LR。：一是用来保存子程序返回地址；二是当异常发生时，LR中保存的值等于异常发生时PC的值减4（或者减2）
+ARM-R13 SP：数据栈指针，记作SP。这样，当程序的运行进入异常模式时，可以将需要保护的寄存器放入R
+  13所指向的堆栈，而当程序从异常模式返回时，则从对应的堆栈中恢复，采用这种方式可以保证异常发生后程序的
+  正常执行。
