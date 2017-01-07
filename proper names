@@ -52,3 +52,13 @@ dword：双字，就是四个字节
 ptr：pointer缩写，即指针
 test：指令是把目标操作数与源操作数进行‘与’操作,影响一些标志位，如ZF
 sub：subtract 减指令
+RSB：Reverse subtract 逆向减法指令
+BIC：Bit clear 位清除指令，将Rn 的值与操作数operand2 的反码按位逻辑”与”
+MUL：Multiply 32位乘法指令
+EOR：Exclusive OR 逻辑异或操作指令
+BEQ：Branch if EQual 相等则跳转
+BNE：Branch if Not Equal 不相等则跳转
+BLE：Branch if Less than or Equal 小于或等于跳转
+BLT：Branch if Less Than 小于跳转
+BGT：Branch if Greater than 大于跳转
+BGE：Branch if Greater than or Equa 大于或等于跳转
