@@ -49,3 +49,5 @@ STOS指令：Store String的作用是将eax中的值拷贝到ES:EDI指向的地�
 0xCCCCCCCC：代表着未被初始化.
 dword：双字，就是四个字节
 ptr：pointer缩写，即指针
+test：指令是把目标操作数与源操作数进行‘与’操作,影响一些标志位，如ZF
+sub：subtract 减指令
