@@ -62,3 +62,4 @@ BLE：Branch if Less than or Equal 小于或等于跳转
 BLT：Branch if Less Than 小于跳转
 BGT：Branch if Greater than 大于跳转
 BGE：Branch if Greater than or Equa 大于或等于跳转
+CPSR：current program status register 程序状态寄存器
