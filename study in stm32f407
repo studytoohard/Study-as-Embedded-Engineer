@@ -1,0 +1,18 @@
+1.MODER：GPIO端口模式控制寄存器 2
+2.OTYPER：控制GPIOx的输出类型（推挽输出：0;开漏输出：1） 1
+3.OSPEEDR：控制GPIOx的输出速度 2
+4.PUPDR：控制GPIOx的上拉/下拉（开漏输出需要的上拉电阻无关） 2
+5.ODR：控制GPIOx的输出（数据寄存器） [15:0]
+6.IDR：读取GPIOx的输入（同上）
+7.外设端口所需电流不能由IO口直接驱动时采用PUPDR_PD下拉电阻，（如蜂鸣器）
+  IO口所需电流供给小。
+8.USART：Universal通用 Synchronous同步 Asynchronous异步 Receiver接收器 Transmitter发送器
+9.USART_SR：Status register状态寄存器 检测串口收发信息状态[9:0]
+10.USART_DR：Data register串口数据寄存器，包含两个寄存器，一个用户发送（TDR），一个用于
+  接收（RDR），因此它具有双重功能（R&W）[8:0]
+11.USART_BRR：Baud rate register波特率寄存器 Mantissa：USARTDIV的尾数[15:4] 
+  Fraction：USARTDIV的小数[3:0]
+12.USART_CR1：Control register 1 控制寄存器1 串口、中断、奇偶校验...使能[15:0]
+13.USART_CR2：Control register 2 控制寄存器2 LIN模式、停止位、时钟...使能[14:0]
+14.USART_CR3：Control register 3 控制寄存器3
+15.
