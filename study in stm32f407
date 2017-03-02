@@ -15,4 +15,26 @@
 12.USART_CR1：Control register 1 控制寄存器1 串口、中断、奇偶校验...使能[15:0]
 13.USART_CR2：Control register 2 控制寄存器2 LIN模式、停止位、时钟...使能[14:0]
 14.USART_CR3：Control register 3 控制寄存器3
-15.
+15.External interrupt/event controller (EXTI)：外部中断/事件控制器 
+16.System configuration controller (SYSCFG)：系统配置控制器
+17.SYSCFG_EXTICR：SYSCFG外部中断配置寄存器，有四个（1~4）32位寄存器
+  低16位分为四块，每块4位（0000~1000）对应GPIO的A-I口。配置时先选
+  引脚（第几个寄存器到该寄存器的第几块）再选IO口
+18.EXTI_IMR：Interrupt mask register中断屏蔽寄存器，配置二十三根线
+  的中断屏蔽位[22:0] 1开启 0屏蔽
+19.EXTI_FTSR：Falling trigger selection register下降沿触发选择器
+20.EXTI_RTSR：Rising下降
+21.NVIC：Nested Vectored Interrupt controller嵌套向量中断控制器
+22.EXTI_PR：Pending register挂起寄存器[22:0]23根中断线上发生了选择的边沿
+  事件相应1位被置1
+23.Independent watchdog(IWDG)：由其专用低俗时钟（LSI）驱动，因此即便在主时钟
+  发生故障时仍然保持工作状态。适合应用于那些需要看门狗作为一个在主程序之外，能
+  够完全独立工作，并且对时间精度要求较低的场合。（1.自由运行递减计数器 2.
+  时钟由独立RC振荡器提供‘可在待机和停止模式下运行）
+24.IWDG_KR：Key关键字寄存器，AAAAhIWDG_RLR的值就会被重载到计数器，从而
+  避免产生看门狗复位-》导致程序复位。[15:0]
+25.IWDG_PR：Prescaler register预分频寄存器，选择计数器时钟的预分频因子[2:0]
+26.IWDG_RLR：Reload register重载寄存器 软件设置[11:0]位每次对IWDG_KR
+  寄存器写入值AAAAh时，这个值就会重载到看门狗计数器中，之后看门狗计数器
+  便从该装载值开始递减计数。超时周期由该值和时钟预分频器共同决定
+27.
