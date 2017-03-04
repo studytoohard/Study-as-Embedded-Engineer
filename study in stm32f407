@@ -45,5 +45,15 @@
 28.WWDG_CR：控制寄存器为应用程序超时等待计时，WDGA（位7 activation）位，1使能 0禁止 看门狗，T[6:0]7位计数器0x40跳转到0x3f（T6清零）产生复位。
 39.WWDG_CFR：配置寄存器为应用程序提早进行操作时产生复位，EWI（Early wakeup Interrupt）位9：提前唤醒中断激活位，在T6清零时产生中断，通知喂狗；WDGTB
   （Timer Base）[8:7]定时器时基选择分频器；W[6:0]窗口计时器，与T[6:0]比较；
-40.
+40.TIMx_CR1：CKD：clock division时钟分频[9:8]，此位域指示定时器时钟频率与数字滤波器所采用的采样时钟之间的分频比；ARPE（Auto_reload preload enable）
+  自动重载预装载使能[7],0 TIMx_ARR不进行缓冲 1 TIMx_ARR进行缓冲；CMS（Center—aligned mode selection）中心对齐模式选择[6:5],00 边沿对齐模式 01~11 
+  中心对齐模式1~3；DIR（DIrection）方向[4]:0 计数器递增计数 1 递减计数；OPM（one—pulse mode）单脉冲模式[3]:0 计数器在发生更新事件时不会停止计数 1
+  计数器在发生下自动重载预装载寄存器一更新事件时停止计数（CEN位清零）；URS（Upadte request source)更新请求源[2]；UDIS(Update disable)更新禁止[1];CEN(Counter enable)计数器使能。
+41.TIMx_ARR：自动重载寄存器[15:0],存放要装载到实际自动重载寄存器的值
+42.TIMx_PSC：prescaler预分频器[15:0],包含每次更新事件发生时要装载到实际预分频寄存器的值。
+43.TIMx_DIER：DMA/Interrupt enable register[15:0],位0 UIE（Update Interrupt enable）更新中断使能 0 禁止 1 使能
+44.PWM：Pulse Width Modulation脉冲宽度调制，是利用微处理器的数字输出来对模拟
+  电路进行控制的一种非常有效的技术。除了TIM6/7其他定时器都可以产生PWM输出。
+45.TIMx_CCR：Caputure Compare Register 捕获/比较寄存器[15:0]
+46.
   
