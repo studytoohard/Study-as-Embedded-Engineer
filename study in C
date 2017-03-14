@@ -1,0 +1,8 @@
+1.strchr(string , char):在字符串中查找单个字符
+2.printf()、fprintf()、sprintf():信息输出到屏幕、信息输出到文件、信息输出到字符串
+3.int a = 0;
+  printf("%d%d%d",a++, a++, a++);210
+	printf("%d%d%d", ++a, ++a, ++a);333
+  =》printf应该是从右往左执行的，++i先于printf执行，i++后于printf执行
+4.
+  
