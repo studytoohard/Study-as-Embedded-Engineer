@@ -59,5 +59,11 @@
     触摸按键上会导致触摸没反应)
 47.USMART 是由 ALIENTEK 开发的一个灵巧的串口调试互交组件，通过它你可以通过串口助手调用程序里面的任何函数，并执行。 注：十分好用,需要用什么函数在
     usmart_config.c中的usmart_nametab[]中添加即可。
-48.    
+48.影子寄存器：通过引入影子寄存器，指令可以重复使用相同的寄存器编码，但是在不同模式下，这些编码对应不同的物理寄存器。
+49.RCC_BDCR:Backup Domain control register 备份域控制寄存器
+50.RTC_WPR:Write Protect Register 写保护寄存器 需要写入关键字密钥 0xCA 0x53 解锁RTC寄存器写保护 写入错误关键字激活写保护
+51.RTC_ISR:initialization and status register 初始化和状态寄存器 
+52.RTC_PRER:Prescaler Register 预分频寄存器 LSE:低速外部时钟源频率为32.768kHz 需先设置15位PREDIV_S[14:0]：同步预分频系数 (Synchronous prescaler factor)为0xFF
+  位0XFF,才能设置7位PREDIV_A[6:0]：异步预分频系数 (Asynchronous prescaler factor)0x7F 即(255+1) X (127+1) = 32768 得到1Hz.
+53.RTC_BKR:后备寄存器 写入关键字来永久标志状态.
   
