@@ -70,6 +70,9 @@
     EXTI_PR Pending Register 挂起寄存器  当在外部中断线上发生了选择的边沿事件，该位被置“1”。在此位中写入“1”可以清除它,也可以通过改变边沿检测的极性清除。 
     EXTI_IMR Interrupt Mask Register 中断屏蔽寄存器 置1开放来自x线的中断请求
     外部中短线22连唤醒事件，17连闹钟事件。
-55.    
+55.RNG:Random Number generator 随机数发生器 该模拟电路由几个环形振荡器组成，振荡器的输出进行异或运算以产生种子。RNG_LFSR 由 专用时钟 (PLL48CLK) 按恒定频率
+    提供时钟信息，因此随机数质量与 HCLK 频率无关。当将大量种子引入 RNG_LFSR 后，RNG_LFSR 的内容会传入数据寄存器 (RNG_DR)。
+    两个连续随机数的间隔为 40 个 PLL48CLK 时钟信号周期
+56.    
     
     
