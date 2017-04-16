@@ -47,7 +47,7 @@
   （Timer Base）[8:7]定时器时基选择分频器；W[6:0]窗口计时器，与T[6:0]比较；
 40.TIMx_CR1：CKD：clock division时钟分频[9:8]，此位域指示定时器时钟频率与数字滤波器所采用的采样时钟之间的分频比；ARPE（Auto_reload preload enable）
   自动重载预装载使能[7],0 TIMx_ARR不进行缓冲 1 TIMx_ARR进行缓冲；CMS（Center—aligned mode selection）中心对齐模式选择[6:5],00 边沿对齐模式 01~11 
-  中心对齐模式1~3；DIR（DIrection）方向[4]:0 计数器递增计数 1 递减计数；OPM（one—pulse mode）单脉冲模式[3]:0 计数器在发生更新事件时不会停止计数 1
+  中心对齐模式1~3；DIR（DIrection6）方向[4]:0 计数器递增计数 1 递减计数；OPM（one—pulse mode）单脉冲模式[3]:0 计数器在发生更新事件时不会停止计数 1
   计数器在发生下自动重载预装载寄存器一更新事件时停止计数（CEN位清零）；URS（Upadte request source)更新请求源[2]；UDIS(Update disable)更新禁止[1];CEN(Counter enable)计数器使能。
 41.TIMx_ARR：自动重载寄存器[15:0],存放要装载到实际自动重载寄存器的值
 42.TIMx_PSC：prescaler预分频器[15:0],包含每次更新事件发生时要装载到实际预分频寄存器的值。
@@ -66,4 +66,10 @@
 52.RTC_PRER:Prescaler Register 预分频寄存器 LSE:低速外部时钟源频率为32.768kHz 需先设置15位PREDIV_S[14:0]：同步预分频系数 (Synchronous prescaler factor)为0xFF
   位0XFF,才能设置7位PREDIV_A[6:0]：异步预分频系数 (Asynchronous prescaler factor)0x7F 即(255+1) X (127+1) = 32768 得到1Hz.
 53.RTC_BKR:后备寄存器 写入关键字来永久标志状态.
-  
+54.EXTI:External interrupt/event controller 外部中断/事件控制器.
+    EXTI_PR Pending Register 挂起寄存器  当在外部中断线上发生了选择的边沿事件，该位被置“1”。在此位中写入“1”可以清除它,也可以通过改变边沿检测的极性清除。 
+    EXTI_IMR Interrupt Mask Register 中断屏蔽寄存器 置1开放来自x线的中断请求
+    外部中短线22连唤醒事件，17连闹钟事件。
+55.    
+    
+    
