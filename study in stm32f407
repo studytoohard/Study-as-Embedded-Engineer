@@ -58,7 +58,7 @@
 46.TPAD触摸按键连接在PA5上的TIM2_CH1上初始化时检测出没触摸时充电时间,在触摸时电容充电时间会相较较大,与先前比较可以判定触摸了触摸按键.(BUG:复位时按在
     触摸按键上会导致触摸没反应)
 47.USMART 是由 ALIENTEK 开发的一个灵巧的串口调试互交组件，通过它你可以通过串口助手调用程序里面的任何函数，并执行。 注：十分好用,需要用什么函数在
-    usmart_config.c中的usmart_nametab[]中添加即可。
+    usmart_config.c中的usmart_nametab[]中添加即可。 支持参数类型（数字（包含 10/16 进制，支持负数）、字符串、函数指针等）
 48.影子寄存器：通过引入影子寄存器，指令可以重复使用相同的寄存器编码，但是在不同模式下，这些编码对应不同的物理寄存器。
 49.RCC_BDCR:Backup Domain control register 备份域控制寄存器
 50.RTC_WPR:Write Protect Register 写保护寄存器 需要写入关键字密钥 0xCA 0x53 解锁RTC寄存器写保护 写入错误关键字激活写保护
@@ -87,5 +87,6 @@
   规则组通道转换结束后，硬件将该位置 1。通过软件或通过读取 ADC_DR 寄存器将该位清零。
 64.温度传感器值:T（℃）={（Vsense - V25）/Avg_Slope}+25 V25=Vsense在 25 度时的数值（典型值为：0.76）。 Avg_Slope=温度与 Vsense 曲线的平均斜率（单位为 mv/℃或 uv/℃）（典型值为
     2.5mV/℃）。 使能CCR的23位TSVREFE(Temperature sensor and V(REFINT) enable)：温度传感器和 V(REFINT) 使能
-65.    
+65.DAC:数模转换器 设置DAC->DHR12R1 DAC的1通道 12 位右对齐数据保持寄存器 (DAC_DHR12R1)相应数据即可进行数模转换.
+66.
     
