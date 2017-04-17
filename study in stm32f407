@@ -76,5 +76,14 @@
 56.SCB_SCR:System Control Block系统控制块 系统控制寄存器 睡眠使能位BIt2 SLEEPDEEP=1/0 控制处理器是否使用睡眠或深度睡眠作为其低功耗模式
 57.进入待机状态之后相应唤醒中断或事件会唤醒CPU及SARM相当于程序复位重新运行。解释了为什么待机之后程序的唤醒也是等待3s，因为WAKE_UP初始话中是
     等待3s决定是否进入待机模式，然后使能PA0外部中断.
-    
+58.ADC分辨率:分辨率是指ADC能够分辨量化的最小信号的能力。分辨率用二进制位数表示。例如对一个10位的ADC，其所能分辨的最小量化电平为参考电平（满量程）
+    的2的10次方分之一。也就是说分辨率越高，就能把满量程里的电平分出更多的份数（10bit就是把满量程分成了2^10份），得到的转换结果就越精确，得到的数字
+    信号再用DAC转换回去就越接近原输入的模拟值。    
+59.ADC数据对齐:ADC 的结果可以左对齐或右对齐方式存储在 16 位数据寄存器中。     
+60.ADC_SQR:Regular Sequence Register 规则序列寄存器 
+61.ADC_SMPR:Sample Time Register 采样时间寄存器 
+62.ADC:Analog-to-Digital Converter 需要CR2中先开启 ADON：A/D(A/D Converter ON / OFF)再开启SWSTART:(Start conversion of regular channels)
+63.ADC_SR:位 1  EOC：规则通道转换结束 (Regular channel end of conversion)
+  规则组通道转换结束后，硬件将该位置 1。通过软件或通过读取 ADC_DR 寄存器将该位清零。
+64.  
     
