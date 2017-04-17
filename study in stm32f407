@@ -85,5 +85,7 @@
 62.ADC:Analog-to-Digital Converter 需要CR2中先开启 ADON：A/D(A/D Converter ON / OFF)再开启SWSTART:(Start conversion of regular channels)
 63.ADC_SR:位 1  EOC：规则通道转换结束 (Regular channel end of conversion)
   规则组通道转换结束后，硬件将该位置 1。通过软件或通过读取 ADC_DR 寄存器将该位清零。
-64.  
+64.温度传感器值:T（℃）={（Vsense - V25）/Avg_Slope}+25 V25=Vsense在 25 度时的数值（典型值为：0.76）。 Avg_Slope=温度与 Vsense 曲线的平均斜率（单位为 mv/℃或 uv/℃）（典型值为
+    2.5mV/℃）。 使能CCR的23位TSVREFE(Temperature sensor and V(REFINT) enable)：温度传感器和 V(REFINT) 使能
+65.    
     
