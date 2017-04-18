@@ -87,7 +87,7 @@
   规则组通道转换结束后，硬件将该位置 1。通过软件或通过读取 ADC_DR 寄存器将该位清零。
 64.温度传感器值:T（℃）={（Vsense - V25）/Avg_Slope}+25 V25=Vsense在 25 度时的数值（典型值为：0.76）。 Avg_Slope=温度与 Vsense 曲线的平均斜率（单位为 mv/℃或 uv/℃）（典型值为
     2.5mV/℃）。 使能CCR的23位TSVREFE(Temperature sensor and V(REFINT) enable)：温度传感器和 V(REFINT) 使能
-65.DAC:数模转换器 设置DAC->DHR12R1 DAC的1通道 12 位右对齐数据保持寄存器 (DAC_DHR12R1)相应数据即可进行数模转换.
+65.DAC:数模转换器 设置DAC->DHR12R1 DAC的1通道 12 位右对齐数据保持寄存器 (DAC->DHR12R1)相应数据即可进行数模转换.
 66.RC:Resistance-Capacitance 电阻电容滤波器
 67.GPIO为什么设置电平只需1位判断是1/0却用到的是ODR32位寄存器 答:IO口复用为串口传送数据也要用到ODR和IDR
 68.DMAx->LIFCR:Low Interrupt Flag Clear register 低中断标志清零寄存器0~3 相应HIFCR 4-7
@@ -95,3 +95,4 @@
 70.DMAx_Streamx->M0AR:Memory 0 address register 储存器0地址寄存器  (没有用到双缓冲模式 就通过 DMA_SxM0AR 来设置)
 71.双缓冲区类型事务：使用存储器的两个存储器指针的双缓冲区传输（当 DMA 正在进行自缓冲区的读/写操作时，应用程序可以进行至/自其它缓冲区的写/读操作）。
 72.DMAx_Streamx->NDTR Number of Data Register 数据项数寄存器
+73.
