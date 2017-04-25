@@ -95,4 +95,5 @@
 70.DMAx_Streamx->M0AR:Memory 0 address register 储存器0地址寄存器  (没有用到双缓冲模式 就通过 DMA_SxM0AR 来设置)
 71.双缓冲区类型事务：使用存储器的两个存储器指针的双缓冲区传输（当 DMA 正在进行自缓冲区的读/写操作时，应用程序可以进行至/自其它缓冲区的写/读操作）。
 72.DMAx_Streamx->NDTR Number of Data Register 数据项数寄存器
-73.
+73.IIC：(1) SCL高电平,SDA由高变低,开始发送数据 (2) SCL为低电平准备发送或者接收数据 (3)
+74.AT24C02
