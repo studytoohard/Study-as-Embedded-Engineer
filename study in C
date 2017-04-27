@@ -4,5 +4,7 @@
   printf("%d%d%d",a++, a++, a++);210
 	printf("%d%d%d", ++a, ++a, ++a);333
   =》printf应该是从右往左执行的，++i先于printf执行，i++后于printf执行
-4.
+4.strlen函数在<string.h>文件中 程序中切记注意循环中有无改变判断条件变量的值。
+5.
+
   
