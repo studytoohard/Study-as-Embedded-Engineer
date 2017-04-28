@@ -1,10 +1,11 @@
 1.strchr(string , char):在字符串中查找单个字符
 2.printf()、fprintf()、sprintf():信息输出到屏幕、信息输出到文件、信息输出到字符串
 3.int a = 0;
-  printf("%d%d%d",a++, a++, a++);210
+	printf("%d%d%d",a++, a++, a++);210
 	printf("%d%d%d", ++a, ++a, ++a);333
   =》printf应该是从右往左执行的，++i先于printf执行，i++后于printf执行
 4.strlen函数在<string.h>文件中 程序中切记注意循环中有无改变判断条件变量的值。
-5.
-
-  
+5.<stdio.h>中：
+	(FILE*)freopen(_FileName,_Mode,_Stream) Reopens a stream to a new file. 将“输入/输出流”(_Stream)读/写(_Mode)重定向(reopens)到文件(_FileName)[f]中
+		
+	fopen(_FileName,_Mode) 
