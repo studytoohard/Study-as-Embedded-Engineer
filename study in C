@@ -1,3 +1,4 @@
+0.为什么找不到printf、scanf、fprintf、fscanf（）函数实现的文件：书上明确写着，系统本身就定义好printf函数了，并且是读者是看不到和找不到的！你不用去理	会他的定义，编程时写上他的声明就够了。
 1.strchr(string , char):在字符串中查找单个字符
 2.printf()、fprintf()、sprintf():信息输出到屏幕、信息输出到文件、信息输出到字符串
 3.int a = 0;
@@ -6,6 +7,8 @@
   =》printf应该是从右往左执行的，++i先于printf执行，i++后于printf执行
 4.strlen函数在<string.h>文件中 程序中切记注意循环中有无改变判断条件变量的值。
 5.<stdio.h>中：
-	(FILE*)freopen(_FileName,_Mode,_Stream) Reopens a stream to a new file. 将“输入/输出流”(_Stream)读/写(_Mode)重定向(reopens)到文件(_FileName)[f]中
-		
-	fopen(_FileName,_Mode) 
+	(FILE*)freopen(_FileName,_Mode,_Stream,_Format) Reopens a stream to a new file. 将“输入/输出流”(_Stream)读/写(_Mode)重定向(reopens)到文件(_FileName)[f]中 返回值为指向(_FileName)文件的指针,文件不存在则返回NUll		
+	(FILE*)fopen(_FileName,_Mode) 返回指向(_FileName)的指针,以_Mode模式打开,(_Mode）可为"r"、"w"、"rb"、"wb"字节读写 位读写。
+	(int)fprintf(_Stream,_Format,...) 用_Format格式将参数打印到_Stream中
+	(int)fscanf(_Stream,_Format,...) 用_Format格式从_Stream取值赋给参数
+
