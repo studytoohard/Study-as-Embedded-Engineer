@@ -11,4 +11,7 @@
 	(FILE*)fopen(_FileName,_Mode) 返回指向(_FileName)的指针,以_Mode模式打开,(_Mode）可为"r"、"w"、"rb"、"wb"字节读写 位读写。
 	(int)fprintf(_Stream,_Format,...) 用_Format格式将参数打印到_Stream中
 	(int)fscanf(_Stream,_Format,...) 用_Format格式从_Stream取值赋给参数
-
+6.char* str[]: 字符指针数组，其中str地址=str[0]地址，str->str[0],str中存放str[0][0]的地址，所以输出str[0]地址中的值即可输出str[0]；
+	str的地址+i*4即输出str[i]的值。
+	cout << *(char**)(((int)string) + 4*i);//&string<=>string<=>&string[0]; 注意括号,输出该字符指针数组的第i个字符串就不能掉一个括号。
+	
