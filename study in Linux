@@ -16,4 +16,5 @@
 16.trap：command（命令）+signal（信号量）
 17.unset：删除变量
 18.find . \( -name "_*" -o -newer while2 \) -type f -exec ls -l {} \;
-19.
+19.ps: Process Status 进程状态
+20.grep:global search regular expression
