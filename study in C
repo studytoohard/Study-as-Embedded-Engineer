@@ -15,3 +15,6 @@
 	str的地址+i*4即输出str[i]的值。
 	cout << *(char**)(((int)string) + 4*i);//&string<=>string<=>&string[0]; 注意括号,输出该字符指针数组的第i个字符串就不能掉一个括号。
 7.char *p,q： p为字符型指针，q为字符;
+8.<unistd.h>中:(Unix standard)对于类 Unix 系统，unistd.h 中所定义的接口通常都是大量针对系统调用的封装（英语：wrapper functions），如 fork、pipe 以及
+	各种 I/O 原语（read、write、close 等等
+9.	
