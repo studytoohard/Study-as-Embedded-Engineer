@@ -18,3 +18,10 @@
 18.find . \( -name "_*" -o -newer while2 \) -type f -exec ls -l {} \;
 19.ps: Process Status 进程状态
 20.grep:global search regular expression
+21.tty:Teletype 终端(电传打字机)
+22.ioctl: I/O Control 设备驱动程序中对设备的I/O通道进行管理的函数
+23.当一个程序运行时一般有三个已经打开了的设备描述符:
+    0.标准输入
+    1.标准输出
+    2.标准错误
+24.  
