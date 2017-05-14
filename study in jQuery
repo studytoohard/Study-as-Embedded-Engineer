@@ -1,0 +1,21 @@
+jQuert选择器：1." " 标签
+             2."# " id
+             3.". " class
+             4."[ ]" 属性
+             5.": " type
+jQuery事件：1.click()    点击
+           2.dblclick()     双击
+           3.mouseenter()     鼠标进入
+           4.mouseleave()     鼠标离开
+           5.hover()      悬停
+           6.focus()      聚焦
+           7.blur()     模糊
+           8.hide(speed,callback)     可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+            可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+           9.show(speed,callback)
+           10.foggle(speed,callback)      切换hide、show
+           11fadeIn(speed,callback)     渐明
+           12fadeOut(speed,callback)    淡出  
+           13.fadeToggle(speed,callback)      切换
+           14.fadeTo(speed,opacity,callback)      opacity不透明度
+             
