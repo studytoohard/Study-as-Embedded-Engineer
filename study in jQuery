@@ -18,4 +18,8 @@ jQuery事件：1.click()    点击
            12fadeOut(speed,callback)    淡出  
            13.fadeToggle(speed,callback)      切换
            14.fadeTo(speed,opacity,callback)      opacity不透明度
+           15.slideDown(speed,callback)     下滑
+           16.slideUp(speed,callback)     上滑
+           17.slideToggle(speed,callback)     切换滑
+           18.
              
