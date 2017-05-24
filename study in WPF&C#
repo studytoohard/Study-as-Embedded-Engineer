@@ -5,3 +5,4 @@
 5.float/Float类型需要在后面+f
 6.rint：返回最接近参数的整数值 5时向偶取整 返回值：double
 7.round：返回最接近参数的整数值 四舍五入 返回值：int long
+8.JVM
