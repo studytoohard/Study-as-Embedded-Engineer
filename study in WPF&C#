@@ -5,4 +5,9 @@
 5.float/Float类型需要在后面+f
 6.rint：返回最接近参数的整数值 5时向偶取整 返回值：double
 7.round：返回最接近参数的整数值 四舍五入 返回值：int long
-8.JVM
+8.将需要用户处理的异常抛出
+9.try-with-resources可以避免错误、简化代码和自动关闭资源
+try（声明和创建资源）{
+  使用资源来处理文件;
+}
+10.url.openStream(); inputStream通道 与网页脚本连接
