@@ -8,4 +8,12 @@ RMS计算：RMS(root mean square)
   （1）计算波形函数（一般是正弦波）的平方值。
   （2）对第一步得到的函数求时间平均值。
   （3）求第二步得到的函数的平方根。
+  
+AMBIENT LIGHT CANCELLATION：环境光消除
+PHOTODIODE：光敏二极管
+Electrical Characteristics：电气特性
+I2C Write Address：AE
+I2C Read Address：AF
+Bidirectional：双向的
 
+ADC相关：18位分辨率，采样率为10.24MHz，每秒采样50次到3200次
