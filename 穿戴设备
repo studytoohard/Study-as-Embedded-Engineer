@@ -17,3 +17,18 @@ I2C Read Address：AF
 Bidirectional：双向的
 
 ADC相关：18位分辨率，采样率为10.24MHz，每秒采样50次到3200次
+
+MSB：是Most Significant Bit的缩写，最高有效位。
+LSB：Least Significant Bit，意为最低有效位。
+
+SpO2传感器返回到光敏传感器，返回到ADC上得到的是电流信号
+
+LED Pulse Width Control and ADC Resolution：这些位设置LED脉冲宽度（IR和红色具有相同的
+        脉冲宽度），因此间接地设置ADC在每个样品中的积分时间。ADC分辨率与积分时间有直接关系。
+        
+SpO2 Configuration (0x0A)：设置ADC量程,采样率,分辨率
+
+burst read  直译为突发读，速度比random read 高一些。
+  有人理解burst read ：峰值读取速度，random read：额定读取速度
+    本人认为：burst read为读取连续地址内容时，给个首地址，读出给定大小连续内容的读取模式。类似于DMA。
+      由于不需要像random read 一样，每字给出一个地址，此种方式的读取速度快出65%左右（视每次burst read length而定）
