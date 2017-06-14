@@ -32,3 +32,9 @@ burst read  直译为突发读，速度比random read 高一些。
   有人理解burst read ：峰值读取速度，random read：额定读取速度
     本人认为：burst read为读取连续地址内容时，给个首地址，读出给定大小连续内容的读取模式。类似于DMA。
       由于不需要像random read 一样，每字给出一个地址，此种方式的读取速度快出65%左右（视每次burst read length而定）
+
+实际FIFO寄存器操作中只有FIFO_RD_PTR register需要写操作
+
+FIFO_DATA register 需要 an I2C start event 才能burst read 
+
+FIFO由32个样本点组成,每个样本点最多为2x3 bytes FIFO总容量最大为192bytes 左对齐
