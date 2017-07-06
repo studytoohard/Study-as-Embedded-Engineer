@@ -1,0 +1,4 @@
+1.JavaBean可分为两种：一种是有用户界面（UI，User
+  Interface）的JavaBean；还有一种是没有用户界面，主要负责处理事务（如数据运算，操纵数据库）的JavaBean。JSP通常访问的是后一种JavaBean。
+  
+2.
