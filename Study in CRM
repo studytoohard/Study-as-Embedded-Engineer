@@ -45,6 +45,8 @@ BOSS系统的两级三层架构：
 
 业务流程：
   1.在html相关目录项下增加业务文件夹，里面放xxxList.html 和 xxxList.page，在WEB-INF中找到目录项application注册业务页面。
-  2.xxx.page中连接页面类xxxList.java，页面类连接xxxQrySVC.java，xxxQrySVC.java连接xxxBean.java,xxxBean.java连接Dao.java
-  3.xxxBean.java中Dao.qryByCode连接dao.queryListByCodeCode(...)
+  2.xxx.page中连接页面类xxxList.java.
+  3.页面类连接xxxQrySVC.java,在config.service/personserv.xml中注册xxxQrySVC服务,xxxQrySVC.java连接xxxBean.java,xxxBean.java连接Dao.java
+  4.xxxBean.java中Dao.qryByCode连接dao.queryListByCodeCode(...)
+  
   
