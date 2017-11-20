@@ -1,0 +1,75 @@
+-------------------------2017/11/15----
+	视图：
+		 视图是数据库中的虚拟表。在视图中存放的是从数据库中查询出来的记录，使用视图主要是方便信息查询，也能够缩短查询数据的时间。		 
+	存储过程：
+		 存储过程是由SQL语句和控制流语句组成的语句块，存储过程储存在数据库内，可由应用程序通过存储过程的名称调用执行。（对于大量的数据操作只需返回需要的数据，减少了数据的传输量，速度也可以大大提升）
+	触发器：
+		 触发器是特殊的储存过称，但是在数据库中不需要调用而自动执行		 
+	约束：约束是数据库中保证表中数据完整性的手段。
+		主键约束：
+			在每个数据表中只能有一个，但是一个主键约束可以由多个列组成，通常把由多个列组成的主键又叫做复合主键或组合主键。主键约束可以保证主键列的数据没有重复值且不为空。
+		外键约束：
+			外键约束之所以被认为是参照约束，是因为它主要用作把一个表中的数据和另一个表中的数据进行关联，表和表之间的关联是为了保证数据的完整性，使用外键保证数据的完整性，也叫参照的完整性。
+		唯一约束：
+			唯一约束和主键约束一样都是设置表中列不能重复的约束，区别就是一个表中只能有一个主键约束，却可以有多个唯一约束。通常情况下设置唯一约束的目的就是使非主键列没有重复值。唯一约束和主键约束的另一个区别是如果数据表中的某一列中有空值，那么就不能把这个列设置为主键列，而可以设置为唯一约束。
+		检查约束：
+			检查约束是用来指定表中列的值的取值范围的。当输入的值不在有效范围内时，就会出现错误。这样就保证了数据库中的数据的有效性。
+		非空约束：
+
+	数据库设计的完整性：
+		实体完整性:
+			要求表中主键字段不能为重复值或者空。
+		区域完整性：
+			区域完整性是保证输入到数据库中的数据是在有效范围内的，可以使用检查约束来设置。
+		参照完整性：
+			参照完整性可以保证数据库中相关联的表的数据的正确性，可以用外键约束来约束
+
+	范式-设计关系型数据库的准则
+		第一范式：
+			数据库表中的字段都是单一属性的，不可再分。
+		第二范式：
+			数据库表中不存在非关键字段对任一候选关键字段的部分函数依赖。第二范式中组合主键(AB)里面的A或者B与其他字段不能存在组合重复
+			违反后果：数据冗余、更新异常、插入异常、删除异常
+			常用手段：分表、增加编号列
+		第三范式：
+			数据库表中不存在非关键字段对任一候选关键字段的传递函数依赖。如果存在A决定B，B决定C，则C传递函数依赖于A
+		BCNF：
+			数据库表中不存在任何字段对任一候选关键字段的传递函数依赖。
+	E-R：Entity-Relationship
+
+-------------------------2017/11/15----
+	为表列添加注释
+		COMMENT ON COLUMN chentw.TF_B_PRODUCT.REMARK IS '备注';
+	增加/修改表列
+		ALTER TABLE chentw.TF_B_PRODUCT ADD/MODIFY remark VARCHAR2(200);
+	删除表列
+		ALTER TABLE chentw.TF_B_PRODUCT DROP COLUMN remark;
+	修改表名
+		ALTER TABLE chentw.TF_B_PRODUCT1 RENAME to TF_B_PRODUCT;
+	修改列名
+		ALTER TABLE chentw.TF_B_PRODUCT RENAME COLUMN REMARK1 to remark;
+    添加主键
+		ALTER TABLE chentw.TF_F_GATEGORY ADD CONSTRAINT PK_TF_F_CATEGORY PRIMARY KEY(CATEGORYID);
+	删除主键
+		ALTER TABLE chentw.TF_F_GATEGORY DROP CONSTRAINT PK_TF_F_CATEGORY;
+	
+-------------------------2017/11/18----
+	添加外键
+		ALTER TABLE chentw.TF_F_PRODUCT ADD CONSTRAINT fk_product_gategory FOREIGN KEY(category) REFERENCES chentw.TF_F_GATEGORY(CATEGORYID) ON DELETE CASCADE; cascade级联
+	检查约束
+		ALTER TABLE chentw.TF_F_CUSTOMINFO ADD CONSTRAINT chk_age CHECK(age<=50 AND age >=18);
+	唯一约束
+		alter table TF_B_ORDER add constraint UNQ_ORDERID unique (ORDERID)
+	
+	外键在引用表中关联的列不一定是主键,但必须是唯一性索引。 主键约束和唯一性约束都是唯一性索引。
+
+	非空约束 
+		ALTER TABLE chentw.TF_F_MANAGER MODIFY loginname NOT NULL;
+
+-------------------------2017/11/20----	
+	TRUNCATE语句
+		TRUNCATE TABLE chentw.TF_F_MANAGER;相比delete from chentw.TF_F_MANAGER;删除速度快,不会请求commit,会直接清空表
+	MERGE语句
+		MERGE INTO CHENTW.TF_F_LOGIN T USING CHENTW.TF_F_MANAGER Q ON (T.LOGINID = Q.MANAGERID) WHEN MATCHED THEN UPDATE SET T.PASSWORD = Q.PASSWORD WHEN NOT MATCHED THEN INSERT VALUES (Q.MANAGERID, Q.PASSWORD);
+		ORA-38104：MERGE中ON的比较列不可以在后面的更新中出现
+		

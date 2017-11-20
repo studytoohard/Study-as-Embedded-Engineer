@@ -1,0 +1,33 @@
+-------------------------2017/11/16----
+	JNDI：Java命名和目录接口 Java Naming and Directory Interface
+	记得看注释
+	@Profile注解指定某个bean属于哪一个profile。 
+	@ActiveProfiles注解， 我们可以使用它来指定运行测试时要激活哪个profile。 
+	@Conditional注解， 它可以用到带有@Bean注解的方法上。 如果给定的条件计算结果为true， 就会创建这个bean， 否则的话， 这个bean会被忽略。
+	@Autowired注解，自动装配
+	@Component注解， 在@ComponentScan组件扫描的时候， 能够发现它们并将其创建为Spring应用上下文里面的bean。 
+	@Primary能够与@Component组合用在组件扫描的bean上，也可以与@Bean组合用在Java配置的bean声明中。 将@Component注解的IceCream bean声明为首选的bean
+	@Qualifier注解是使用限定符的主要方式。 它可以与@Autowired和@Inject协同使用， 在注入的时候指定想要注入进去的是哪个bean。 
+
+	在默认情况下， Spring应用上下文中所有bean都是作为以单例（singleton） 的形式创建的。 也就是说， 不管给定的一个bean被注入到其他bean多少次， 每次所注入的都是同一个实例。
+
+	@ComponentScan(excludeFilters={@Filter(type=FilterType.ANNOTATION, value=Configuration.class)})过滤掉有@Configuration注解的类（如果里面有@Bean则不会冲突）
+
+-------------------------2017/11/18----
+	单例（Singleton）： 在整个应用中， 只创建bean的一个实例。
+	原型（Prototype）： 每次注入或者通过Spring应用上下文获取的
+	时候， 都会创建一个新的bean实例。
+	会话（Session）： 在Web应用中， 为每个会话创建一个bean实
+	例。
+	请求（Rquest）： 在Web应用中， 为每个请求创建一个bean实
+	例。
+	@PropertySource("classpath:/com/soundsystem/app.properties")声明属性源
+	
+	env.getRequiredProperty("disc.artist"));得到的属性必须要定义否则抛出IllegalStateException异常
+	@Test(expected=BeanCreationException.class)表示期望抛出的一个异常
+	@Value 指定占位符用于组件扫描和自动装配来创建和初始化应用组件
+	xml方式解析占位符<context:property-placeholder location="com/soundsystem/app.properties" />
+	SpringEL：#{T(java.lang.Math).random()}
+面向切片的Spring
+	1.在软件开发过程中，散布于应用多处的功能被称为横向关注点（cross-cutting-concern）如：日志、安全、事务管理
+	2.重用通用功能最常见的面向对象技术是继承（inheritance）或委托（delegation）但是， 如果在整个应用中都使用相同的基类，继承往往会导致一个脆弱的对象体系； 而使用委托可能需要对委托对象进行复杂的调用。切面提供了取代继承和委托的另一种可选方案， 而且在很多场景下更清晰简洁。在使用面向切面编程时，我们仍然在一个地方定义通用功能， 但是可以通过声明的方式定义这个功能要以何种方式在何处应用， 而无需修改受影响的类。 横切关注点可以被模块化为特殊的类，这些类被称为切面（aspect）。这样做有两个好处： 首先， 现在每个关注点都集中于一个地方，而不是分散到多处代码中；其次，服务模块更简洁， 因为它们只包含主要关注点（或核心功能）的代码，而次要关注点的代码被转移到切面中了。

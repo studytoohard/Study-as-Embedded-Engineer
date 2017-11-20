@@ -1,0 +1,70 @@
+-------------------------2017/11/15----
+	$(document).ready();
+		网页中所有DOM结构绘制完毕就执行，可能DOM元素关联的东西并没有执行，可以多个；
+	window.onload();
+		必须等待网页中所有内容加载完后(包括图片)才能执行，不能编写多个。
+	$().siblings()
+		兄弟元素
+	$().end()
+		返回最近筛选前的元素
+	DOM：文档对象模型 Document Object Model
+		通过元素节点得到的DOM元素就是DOM对象
+		通过jQuery包装DOM对象后产生的对象就是JQuery对象
+			
+-------------------------2017/11/15----
+	jQuery选择器
+		基本选择器
+			1.input标签有type="hidden"属性 对hide()和show()方法不管用，但是可以通过prop改变属性type为text来解决($("input[type=hidden]").prop('type','text'); )；
+			2.但是div标签有type="hidden"属性对hide()和show()方法可用，div无type="hidden"属性；但是有hidden = "hidden"和style="display:none;"属性且对hide()和show()方法可用
+			3.然而input标签的hidden = "hidden"和style="display:none;"对hide()和show()方法可用。	
+		层次选择器
+			
+-------------------------2017/11/19----			
+		层次选择器
+			$("ancester descendant")选取ancester元素里的所有descendant(后代)元素
+			$("parent>child")选取parent元素下的child(子元素)
+			$("prev").next('next')选取prev元素后的下一个next(同辈)元素
+			$("prev").nextAll('siblings')选取prev元素后的所有siblings(兄弟)元素
+	过滤选择器
+		基本过滤选择器
+		 	$("prev:first") 所有prev元素中的第一个元素
+		 	$("prev:last") 所有prev元素中的最后一个元素
+		 	$("prev:not(selector)") 不被selector所选择的所有prev元素
+		 	$("prev:even") prev元素中下标为偶数的元素（下标从0开始，偶数包括0）
+		 	$("prev:odd") prev元素中下标为偶数的元素
+		 	$("prev:eq(i)") prev元素中下标为i的元素
+		 	$("prev:gt(i)") prev元素中下标大于i的元素
+		 	$("prev:lt(i)") prev元素中下标小于i的元素
+		 	$("prev:header") prev元素中标题元素
+		 	$("prev:animated") prev元素中正在执行动画的元素
+		 	$("prev:focus") prev元素中获取焦点的元素
+		 	parseInt($("#a").val()); 字符串转化数字
+		 	$('div:eq('+i+')'); 字符拼接
+
+-------------------------2017/11/20----		 	
+	 	内容过滤选择器
+	 		$("prev:contains('text')") 含有文本内容为text的prev元素
+	 		$("prev:empty") 不含有子元素或文本的prev元素
+	 		$("prev:has(selector)") 含有selector匹配元素的prev元素
+	 		$("prev:parent") 含有子元素或文本的prev元素
+ 		可见性过滤选择器
+ 			$("prev:hidden") 隐藏的prev元素
+ 			$("prev:visible") 可见的prev元素
+		属性过滤选择器
+			$("prev[attribute]") 有属性attribute的prev元素
+			$("prev[attribute=value]") 属性attribute为value的prev元素
+			$("prev[attribute!=value]") 属性attribute不为value的prev元素
+			$("prev[attribute^=value]") 属性attribute以value开头的prev元素
+			$("prev[attribute$=value]") 属性attribute以value结尾的prev元素
+			$("prev[attribute*=value]") 属性attribute含有value的prev元素
+			$("prev[attribute|=value]") 属性attribute是value或以value为前缀后接连字符'-'的prev元素
+			$("prev[attribute~=value]") 属性attribute用空格分隔的值中含有value的prev元素
+			$("prev[attribute1][attribute2]") 有属性attribute1和attribute2的prev元素
+		子元素过滤选择器
+			$("prev :nth-child(index)") 所有prev元素的子元素的第index个元素
+			$("prev :first-child") 所有prev元素的子元素的第一个元素
+			$("prev :last-child") 所有prev元素的子元素的最后一个元素
+			$("prev :only-child") 只有一个子元素的prev元素
+			注意空格意义：选择后代元素
+		表单对象属性过滤选择器
+						
