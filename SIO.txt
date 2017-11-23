@@ -72,5 +72,37 @@
 	MERGE语句
 		MERGE INTO CHENTW.TF_F_LOGIN T USING CHENTW.TF_F_MANAGER Q ON (T.LOGINID = Q.MANAGERID) WHEN MATCHED THEN UPDATE SET T.PASSWORD = Q.PASSWORD WHEN NOT MATCHED THEN INSERT VALUES (Q.MANAGERID, Q.PASSWORD);
 		ORA-38104：MERGE中ON的比较列不可以在后面的更新中出现
-	SUBSTR(COLUMN, INDEX_S, INDEX_E)截取COLUMN字段的第INDEX_S到INDEX_E位，下标第一位为1
-	
+	1.SUBSTR(COLUMN, INDEX_S, INDEX_E)截取COLUMN字段的第INDEX_S到INDEX_E位，下标第一位为1
+	2.DISTINCT(COLUMN)查询去除重复COLUMN的数据，其他查询项如果有不同则不能去重
+	3.SELECT * FROM TABLE_NAME ORDER BY COLUMN ASC(升序)/DESC(降序)
+		ASC是默认排序方式
+	4.SELECT * FROM TABLE_NAME ORDER BY COLUMN NULLS FIRST(null值最前)/LAST(null值最后)
+		默认NULL最大
+	5.可以用表达式做为排序方式（乘积），NULL值与其他值相乘结果还是NULL
+	6.如果排序顺序不是确定性的，即可能有重复的值，则在每个具有相同值的组中，由于与上述相同的原因，该顺序是“随机的”。确保确定性顺序的唯一方法是在ORDER BY子句中包含保证的唯一列或列组（例如主键）。
+	7.使用字段的位置做为排序字段，一是为了方便，二是为了防止使用UNION时出错
+	8.利用多个字段进行排序，可以单独为每个字段指定排序方式，而且别名、表达式和位置可以混用
+
+-------------------------2017/11/20----
+	子查询返回多行
+		any任一个，不能和<>一起用，会返回所有
+		some某个，不能和<>一起用，会返回所有
+		all所有
+	内连接 
+		INNER JOIN 可以直接写成 JOIN
+		SELECT * from chentw.TF_F_PRODUCT a INNER JOIN chentw.TF_F_GATEGORY b ON a.CATEGORY=b.CATEGORYID;
+		自连接
+			通过自连接可以做到筛选一个表
+			ROWID可以去重
+			SELECT *
+  			FROM CHENTW.TF_F_PRODUCT A, CHENTW.TF_F_PRODUCT B
+			WHERE A.QUANTITY = B.QUANTITY
+   			AND A.PRODUCTID != B.PRODUCTID
+   			AND a.ROWID<=b.ROWID
+   	外连接
+   		左/右外连接可以用(+)
+   		满外连接不可以用，只能如下
+   		SELECT *
+  		FROM CHENTW.TF_F_PRODUCT A
+  		FULL OUTER JOIN CHENTW.TF_F_GATEGORY B
+    		ON A.CATEGORY = B.CATEGORYID
