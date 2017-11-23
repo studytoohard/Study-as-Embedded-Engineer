@@ -40,7 +40,6 @@
 		 	$("prev:focus") prev元素中获取焦点的元素
 		 	parseInt($("#a").val()); 字符串转化数字
 		 	$('div:eq('+i+')'); 字符拼接
-
 -------------------------2017/11/20----		 	
 	 	内容过滤选择器
 	 		$("prev:contains('text')") 含有文本内容为text的prev元素
@@ -66,5 +65,40 @@
 			$("prev :last-child") 所有prev元素的子元素的最后一个元素
 			$("prev :only-child") 只有一个子元素的prev元素
 			注意空格意义：选择后代元素
+-------------------------2017/11/23----				
 		表单对象属性过滤选择器
-						
+			$("prev:enabled") 表单内可用的prev元素
+			$("prev:disabled") 表单内不可用的prev元素
+			$("prev:checked") 表单内选中的prev(单选框、复选框)元素
+			$("prev:selected") 表单内选中的prev(下拉列表)元素
+		表单选择器
+			$("prev:input") 包括所有<input>、<button>、<select>、<textarea>
+			$("prev:text")、$("prev:password")、$("prev:radio")、$("prev:checkbox")、$("prev:image")、$("prev:reset")、$("prev:button")、$("prev:file")
+			$("prev:submit") 包括<input type:"submit" />、<button>
+			$("prev:hidden") 包括<input type="image" />、<option>
+	选择器注意事项
+		选择器中属性值含有'.','#','(',']'时用'\\'转义
+		选择器中有空格为后代选择器、无为过滤选择器
+	案例研究
+		$category.is(":visible");	//判断是否有可见性
+		$('ul li').removeClass("promoted");	//移除样式
+		$(this).find('span');	//找到标签元素
+		$('ul li').filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')")	//高亮
+					.addClass("promoted");	//添加样式
+		return false;			//超链接不跳转
+	选择器是文本内容与行为之间的纽带
+
+-------------------------2017/11/24----	
+	创建DOM元素
+		var $li_1 = $("<li></li>");
+	插入DOM元素
+		$parent.append($li_2);	//父节点的最后一个子节点后追加
+		$parent.prepend($li_2);	//父节点的第一个子节点前追加
+		$prev_li.insertAfter($two_li);	//当前节点后追加
+		$two_li.insertBefore($one_li);  //移动节点
+	删除DOM元素
+		var $li = $("ul li:eq(1)").remove();	//移除选择的元素
+		$li.appendTo("ul");	// 把刚才删除的又重新添加到<ul>元素里， 所以，删除只是从网页中删除，在jQuery对象中，这个元素还是存在的，我们可以重新获取它
+	 	var $li = $("ul li:eq(1)").detach();	//移除选择的元素,之前绑定的事件保留
+	 	$("ul li:eq(1)").empty(); // 找到第二个<li>元素节点后，清空此元素里的内容
+
