@@ -75,7 +75,7 @@
 			$("prev:input") 包括所有<input>、<button>、<select>、<textarea>
 			$("prev:text")、$("prev:password")、$("prev:radio")、$("prev:checkbox")、$("prev:image")、$("prev:reset")、$("prev:button")、$("prev:file")
 			$("prev:submit") 包括<input type:"submit" />、<button>
-			$("prev:hidden") 包括<input type="image" />、<option>
+			$("prev:hidden") 包括<input type="image" />、<option>、<br/>
 	选择器注意事项
 		选择器中属性值含有'.','#','(',']'时用'\\'转义
 		选择器中有空格为后代选择器、无为过滤选择器
@@ -94,11 +94,20 @@
 	插入DOM元素
 		$parent.append($li_2);	//父节点的最后一个子节点后追加
 		$parent.prepend($li_2);	//父节点的第一个子节点前追加
-		$prev_li.insertAfter($two_li);	//当前节点后追加
+		$prev_li.insertAfter($two_li);	//将prev节点追加到参数元素后
 		$two_li.insertBefore($one_li);  //移动节点
 	删除DOM元素
 		var $li = $("ul li:eq(1)").remove();	//移除选择的元素
 		$li.appendTo("ul");	// 把刚才删除的又重新添加到<ul>元素里， 所以，删除只是从网页中删除，在jQuery对象中，这个元素还是存在的，我们可以重新获取它
 	 	var $li = $("ul li:eq(1)").detach();	//移除选择的元素,之前绑定的事件保留
 	 	$("ul li:eq(1)").empty(); // 找到第二个<li>元素节点后，清空此元素里的内容
-
+ 	复制DOM元素
+	 	$(this).clone().appendTo("ul"); // 复制当前点击的节点，并将它追加到<ul>元素
+		$(this).clone(true).appendTo("ul"); // 注意参数true           可以复制自己，并且他的副本也有同样的绑定事件。
+	替换DOM元素
+		$("p").replaceWith("<i>你最不喜欢的水果是?</i>"); //用参数元素替换选择元素
+		$("<i>你最不喜欢的水果是?</i>").replaceAll("p");	//用新建元素替换参数元素
+	包裹元素
+		$(this).wrap('<b></b>')//用参数元素把选择元素包裹起来
+		$(this).wrapAll('<b></b>')//用参数元素把选择元素包裹起来,多个元素中间的元素会被放倒包裹元素后面
+		$(this).wrapInner('<b></b>')//用参数元素把选择元素的子内容（包括文本）包裹起来
