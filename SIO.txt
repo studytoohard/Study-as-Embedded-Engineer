@@ -83,7 +83,7 @@
 	7.使用字段的位置做为排序字段，一是为了方便，二是为了防止使用UNION时出错
 	8.利用多个字段进行排序，可以单独为每个字段指定排序方式，而且别名、表达式和位置可以混用
 
--------------------------2017/11/20----
+-------------------------2017/11/23----
 	子查询返回多行
 		any任一个，不能和<>一起用，会返回所有
 		some某个，不能和<>一起用，会返回所有
@@ -106,3 +106,56 @@
   		FROM CHENTW.TF_F_PRODUCT A
   		FULL OUTER JOIN CHENTW.TF_F_GATEGORY B
     		ON A.CATEGORY = B.CATEGORYID
+
+-------------------------2017/11/25----
+	数值型函数
+		ABS() 绝对值函数 absolute value
+		MOD(A1, A2) 取余函数,A2为0则返回A1 Modulo 取模
+		SIGN(A) 判断正负数函数,正数返回1,负数返回-1,0返回0
+		TAN(A)、ATAN(A)、TANH(A) 正切，反正切，双曲正切（类似有正弦SIN，余弦COS）
+		CEIL(A) 返回>=A的最小整数
+		FLOOR(A) 返回<=A的最大整数
+		SQRT(A) 返回A的平方根
+		POWER(A,B) 返回A的B次方
+		LOG(A,B) 返回以A为底B的对数
+		LN(A) 返回以e为底A的对数	
+-------------------------2017/11/26----
+		ROUND(A, B) 返回四舍五入的A，B默认为0，对小数点前(-) |B| 位四舍五入或是四舍五入到小数点后(+)B位
+		TRUNC(A, B) 返回截断的A，B默认为0，对小数点前(-) |B| 位截断或是截断到小数点后(+)B位
+	字符型函数
+		CHR(ascii) 返回ascii值对应的字符
+		ASCII(char) 返回char对应的ascii值
+		LENGTH(string) 返回string长度
+		SUBSTR(string, index, length) 从下标为index(+从左,-从右)开始截取string中一段长为length的字符串(下标从1开始)
+		CONCAT(str1, str2) 拼接str1和str2只允许两个参数，更常用'str1' || 'str2' || 'str3'拼接
+		INSTR('str1','str2', A, B) 在str1中从左(+) |A| 位开始或右(-) |A| 位开始第B次出现的str2首字符在str1中的下标
+-------------------------2017/11/27----		
+		UPPER(string) 将string变为大写
+		LOWER(string) 将string变为小写
+		INITCAP(str) 将str中每个单词首字母变成大写
+		NLS National Language Support 
+		nlsparam 修改Oracle内部函数定义的宏
+		NLSSORT(productname,'NLS_SORT=SCHINESE_PINYIN_M') 带排序参数的排序函数
+		REPLACE(str1, str2, str3) 将str1中搜索到的str2字符串用str3替换,默认str3为空('')
+		RPAD(str1, num, str2) 将str1从末尾填充str2到num位止,str2默认为空格(' ')
+		LPAD(str1, num, str2) 将str1从开头填充str2到num位止,str2默认为空格(' ')
+		TRIM(LEADING|TRAILING|BOTH char from str1) 从str1的头部(LEADING)/尾部(TRAILING)/两侧(BOTH)去除char,默认char为空格(' ')
+		NLS_CHARSET_NAME(1) 返回参数id对应的字符集名称
+		NLS_CHARSET_ID('us7ascii') 返回参数对应的字符集id
+	日期型函数
+		SYSDATE 数据库时间
+		SYSTIMESTAMP 带时区信息的数据库系统时间
+		DBTIMEZONE 数据库时区
+		SESSIONTIMEZONE 当前会话的时区
+		ADD_MONTHS(Date, Integer) 返回Date+Integer月的日期
+		LAST_DAY(Date) 返回Date月的最后一天(Date带时分秒则返回值带时分秒)
+		NEXT_DAY(Date, DayOfWeek) 返回Date日期下的下一个DayOfWeek的日期
+		CURRENT_DATE 返回会话所在时区当前日期
+		CURRENT_TIMESTAMP 返回会话所在时区当前时间戳
+		1.EXTRACT(SECOND FROM TO_TIMESTAMP(TO_CHAR(SYSDATE,'yyyy-mm-dd hh24:mi:ss'),'yyyy-mm-dd hh24:mi:ss'))
+		2.EXTRACT(MINUTE FROM current_timestamp) 返回时间戳TIMESTAMP中的日期特定部分
+		MONTHS_BETWEEN(date1, date2) 返回date1和date2之间的月份数(精确到小数),date1>date2返回+否则-
+		NEW_TIME(date, timezone1, timezone2) 
+		TRUNC(date, fmt) 截取到年('yyyy'|'yy')/月('mm')/日('dd')/星期天('d')/时('hh')/分('mi')
+		ROUND(date, fmt) 四舍五入到年('yyyy'|'yy')/月('mm')/日('dd')/星期天('d')/时('hh')/分('mi'),从后一位进位到fmt
+		
