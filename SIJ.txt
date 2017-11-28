@@ -111,3 +111,24 @@
 		$(this).wrap('<b></b>')//用参数元素把选择元素包裹起来
 		$(this).wrapAll('<b></b>')//用参数元素把选择元素包裹起来,多个元素中间的元素会被放倒包裹元素后面
 		$(this).wrapInner('<b></b>')//用参数元素把选择元素的子内容（包括文本）包裹起来
+	属性操作
+		$(prev).attr(property)	//得到prev元素的property属性值
+		$(prev).removeAttr(property)	//删除prev元素的property属性
+		$(prev).attr({key1:val1,key2:val2...})/$(prev).attr(property,value)	//1.设置多个属性2.设置prev元素的property属性为value
+	样式操作
+		$(prev).addClass(class)	//追加样式
+		$(prev).removeClass(class)	//删除样式,class默认为全部
+		$(prev).toggleClass("class1 class2...")	//参数样式和原样式间切换(参数有原样式则原样式无)
+		$(prev).hasClass(class)	//判断prev元素是否有class样式
+		$(prev).is(class)	//判断prev元素是否有class样式
+	设置和获取HTML,文本和值
+		$(prev).html(val)	//设置prev元素的html文本为val，空则为得到元素的html值
+		$(prev).text(val)	//设置prev元素的text文本为val，空则为得到元素的text值(无html标签)
+		$(prev).val(value)	//设置prev元素的值,空则得到value
+		$(prev).focus(foo)	//prev元素获得焦点时执行foo
+		$(prev).blur(foo)	//prev元素失去焦点时执行foo
+		$(prev).defaultValue	//prev元素初始的value
+		$(prev).val(value)	//prev元素为只可单选元素时value为哪个则选择哪个
+		$(prev).val([value1,value2...])	//prev元素为可多选元素时[]有哪些则选择哪些
+		$(:radio)/$(:checkbox)元素checked="checked"时选中 $(:radio)name相同时互斥
+		$(:select)元素selected="selected"时选中
