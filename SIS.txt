@@ -183,3 +183,19 @@ WEB中的Spring
 		@NotNull 不为空
   		@Size(min=2, max=30) 限制位数
   		@Email 限制Email格式
+
+-------------------------2017/11/29----
+	1.Spring自带了13个视图解析器， 能够将逻辑视图名转换为物理实现
+	2.TilesViewResolver 用于 Apache Tiles视图 TilesViewResolver，控制JSP页面的布局。
+	3.InternalResourceViewResolver会将视图名解析为JSP文件。另外,如果在你的JSP页面中使用了JSP标准标签库(JavaServer Pages Standard Tag Library,JSTL)的话,InternalResourceViewResolver能够将视图名解析为 JstlView 形式的JSP文件,从而将JSTL本地化和资源bundle变量暴露给JSTL的格式化(formatting)和信息(message)标签。
+	4.Spring提供了两个JSP标签库，一个用于表单到模型的绑定，另一个提供了通用的工具类特性。
+将表单绑定到模型上
+	Spring的表单绑定JSP标签库包含了14个标签，它们中的大多数都用来渲染HTML中的表单标签。它们与原生 HTML标签的区别在于它们会绑定模型中的一个对象，能够根据模型中对象的属性填充值。标签库中还包含了一个为用户展现错误的标签，它会将错误信息渲染到最终的HTML之中。
+	@NotBlank 不能为空白(不能只有空白格)
+	@NotEmpty=@NotNull
+展现国际化信息
+	ReloadableResourceBundleMessageSource.setBasename(path)文件目录path为'file:///路径'，根类路径path为'路径'
+jsp显示中文
+	<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" %>
+使用Thymeleaf
+	
