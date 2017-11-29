@@ -111,6 +111,7 @@
 		$(this).wrap('<b></b>')//用参数元素把选择元素包裹起来
 		$(this).wrapAll('<b></b>')//用参数元素把选择元素包裹起来,多个元素中间的元素会被放倒包裹元素后面
 		$(this).wrapInner('<b></b>')//用参数元素把选择元素的子内容（包括文本）包裹起来
+-------------------------2017/11/28----	
 	属性操作
 		$(prev).attr(property)	//得到prev元素的property属性值
 		$(prev).removeAttr(property)	//删除prev元素的property属性
@@ -130,5 +131,25 @@
 		$(prev).defaultValue	//prev元素初始的value
 		$(prev).val(value)	//prev元素为只可单选元素时value为哪个则选择哪个
 		$(prev).val([value1,value2...])	//prev元素为可多选元素时[]有哪些则选择哪些
-		$(:radio)/$(:checkbox)元素checked="checked"时选中 $(:radio)name相同时互斥
-		$(:select)元素selected="selected"时选中
+		$(:radio)/$(:checkbox)元素checked="checked"/true 时选中 $(:radio)name相同时互斥
+		$(:select)元素selected="selected"/true 时选中
+
+-------------------------2017/11/29----
+	遍历节点树
+		$(prev).children() 返回prev元素下的子元素
+		$(prev).next() 返回prev元素下一个同辈元素
+		$(prev).prev() 返回prev元素上一个同辈元素
+		$(prev).siblings() 返回prev元素相邻同辈元素
+		$(prev).closest(element) 返回prev元素最近的element元素，向上查找最先匹配的祖先元素
+		$(prev).parent()	返回prev元素的父辈元素
+		$(prev).parents()	返回prev元素的所有祖先元素
+	CSS-DOM操作
+		$(prev).css(attr)	得到prev元素css中attr属性的值
+		$(prev).css(attr,val)	将prev元素css中attr属性设置为val，可以多个同时设置{"key":"value",..}
+		$(prev).width(value)	设置prev元素的宽
+		$(prev).height(value)	设置prev元素的高
+		var offset = $(prev).offset()获得prev元素的偏移值,offset.top与顶部距离offset.left与左侧距离
+	事件	
+		$(prev).mouseover(foo)	鼠标移动到prev元素上时执行foo
+		$(prev).mouseout(foo)	鼠标移出prev元素上时执行foo
+		$(prev).mousemove(foo)	鼠标移动时执行foo
