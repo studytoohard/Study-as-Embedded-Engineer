@@ -8,4 +8,14 @@ SIS
 	6.Uniform 同一
 	7.Locator 定位符
 	8.herf:Hyperlink Reference 超链接-引用
-	9.
+
+-------------------------2017/12/01----	
+SIO
+	9.Coalesce 联合
+	10.procedural 程序的
+	11.structured 有结构的
+	12.manipulation 操纵
+	13.Declare 声明
+	14.insufficient 不足的
+	15.privileges 权限
+	16.immediate 立即的

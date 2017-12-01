@@ -128,7 +128,7 @@
 		LENGTH(string) 返回string长度
 		SUBSTR(string, index, length) 从下标为index(+从左,-从右)开始截取string中一段长为length的字符串(下标从1开始)
 		CONCAT(str1, str2) 拼接str1和str2只允许两个参数，更常用'str1' || 'str2' || 'str3'拼接
-		INSTR('str1','str2', A, B) 在str1中从左(+) |A| 位开始或右(-) |A| 位开始第B次出现的str2首字符在str1中的下标
+		INSTR('str1','str2', A, B) 在str1中从左(+) |A| 位开始或右(-) |A| 位开始第B次出现的str2首字符在str1中的下标(下标从1开始)
 -------------------------2017/11/27----		
 		UPPER(string) 将string变为大写
 		LOWER(string) 将string变为小写
@@ -158,4 +158,49 @@
 		NEW_TIME(date, timezone1, timezone2) 
 		TRUNC(date, fmt) 截取到年('yyyy'|'yy')/月('mm')/日('dd')/星期天('d')/时('hh')/分('mi')
 		ROUND(date, fmt) 四舍五入到年('yyyy'|'yy')/月('mm')/日('dd')/星期天('d')/时('hh')/分('mi'),从后一位进位到fmt
+	
+-------------------------2017/11/30----	
+	转换函数
+		ASCIISTR(str) 返回str数据库字符集的对应的ASCII字符串
+		BIN_TO_NUM(1,0,0,1) 返回以逗号(',')隔开的二进制对应的十进制数值
+		CAST(value as type) 将value转化成type类型
+		ROWIDTOCHAR(ROWID) 将ROWID转换成CHAR
+		CHARTOROWID(str)	将str转换成ROWID
+		ROWID在整个数据库唯一
+		USERENV('LANGUAGE')	返回用户环境语言
+		CONVERT(str, char_set1, char_set2)	将str从char_set2转到char_set1
+		HEXTORAW(hex) 将十六进制hex转化成RAW
+		RAWTOHEX(str) 将二进制构成的字符串转换成十六进制
+-------------------------2017/12/01----
+		TO_SINGLE_BYTE(str)	将全角字符转为半角字符(全角:2字节)
+	NULL函数
+		COALESCE(param...)	返回第一个不为空的param,无则返回null
+		LNNVL == IS NULL OR IS NOT TRUE
+		LNNVL(condition) 返回条件(condition)取反,包括null返回TRUE
+		NVL(expression1, expression2) 表达式expression1为null时返回expression2
+		NVL2(expression1, expression2, expression3) 表达式expression1为null时返回expression3,否则返回expression2
+	集合函数
+		AVG((DISTINCT/ALL)COLUMN)	返回列平均值,默认为ALL(不去重) 可以在where中使用条件(限制COLUMN)
+		COUNT((DISTINCT/ALL)COLUMN)	返回列数量和,默认为ALL(不去重) 可以在where中使用条件(限制COLUMN)
+		MAX/MIN((DISTINCT/ALL)COLUMN)	返回列最大值/最小值,默认为ALL(不去重) 可以在where中使用条件(限制COLUMN)
+		SUM((DISTINCT/ALL)COLUMN)	返回列值和,默认为ALL(不去重) 可以在where中使用条件(限制COLUMN)
+	表达式函数
+		DECODE(expression,[search1,result1],[search2,result2]...[],result_default) expression=searchN则返回resultN,无匹配则返回default_result
+PL/SQL
+	PL/SQL特点:
+		1.支持事务控制和SQL数据操作命令
+		2.支持SQL所有数据类型,并且在此基础上扩展了新的数据类型,也支持SQL的函数以及运算符
+		3.PL/SQL可以存储在Oracle服务器中
+		4.服务器上的PL/SQL程序可以使用权限进行控制
+		5.Oracle有自己的DBMS包,可以处理数据的控制和定义命令
+	PL/SQL的优点:
+		1.可以提高程序的运行能力
+		2.可以使程序模块化
+		3.可以采用逻辑控制语句来控制程序结构
+		4.利用处理运行时的错误信息
+		5.良好的移植性
+	PL/SQL的结构:
+		基本单位:块(block),块分为三部分:声明部分(Declare)、执行部分(Begin)和异常处理部分(Exception)。
+		TOO_MANY_ROWS	返回多行错 
+		NO_DATA_FOUND	查询不到
 		
