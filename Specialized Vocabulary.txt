@@ -19,3 +19,14 @@ SIO
 	14.insufficient 不足的
 	15.privileges 权限
 	16.immediate 立即的
+
+-------------------------2017/12/05----
+SIS
+	17.Customize 定做的	 201480250208 012073
+	18.Registration 登记
+	19.Multipart 多部件的,几部分的
+	20.Duplicate 复制的
+
+-------------------------2017/12/06----		
+SIS
+	21.flesh out 使...被充满
